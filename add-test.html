@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestHub | Test qo'shish</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+</head>
+<body>
+    <!-- Main Header -->
+    <header>
+        <div class="tittle-logo-container">
+            <div class="logo-tittle">
+                <h1>TestHub</h1>
+            </div>
+            <div class="logo">
+                <img src="assets/icon/logo.svg" alt="logo">
+            </div>
+        </div>
+        <div class="notification-user-logout-container">
+            <a href="#">
+                <div class="notification" onclick="toggleNotificationPage(event)">
+                    <img src="assets/icon/notification.svg" alt="notification">
+                    <span class="notification-count">2</span>
+                </div>
+            </a>
+            <div class="notification-page" id="notificationPage">
+                <h3>Xabarlar</h3>
+                <div class="container">
+                    <p>You have 2 new messages.</p>
+                    <p>You have 2 new messages.</p>
+                    <p>You have 2 new messages.</p>
+                    <p>You have 2 new messages.</p>
+                    <p>You have 2 new messages.</p>
+                    <p>You have 2 new messages.</p>
+                    <p>You have 2 new messages.</p>
+                    <p>You have 2 new messages.</p>
+                </div>
+            </div>
+            <a href="#">
+                <div class="user">
+                    <img src="assets/icon/user.svg" alt="user">
+                </div>
+            </a>
+            <a href="#">
+                <div class="logout">
+                    <img src="assets/icon/logout.svg" alt="logout">
+                </div>
+            </a>
+        </div>
+    </header>
+    <!-- /Main Header -->
+    
+    <!-- Main Navbar -->
+    <nav class="nav-container">
+        <ul>
+            <li>
+                <a href="view-test.html">
+                    <div class="nav-items">
+                        <img src="assets/icon/menu-board.svg" alt="menu-board">
+                        <span>Testlar</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="nav-items add-test-active">
+                        <img src="assets/icon/note-add.svg" alt="note-add">
+                        <span>Test qo'shish</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="nav-items">
+                        <img src="assets/icon/activity.svg" alt="activity">
+                        <span>Natijalar</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="nav-items">
+                        <img src="assets/icon/user-tag.svg" alt="user-tag">
+                        <span>Profil</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="nav-items">
+                        <img src="assets/icon/message-question.svg" alt="message-question">
+                        <span>Savol va taklif</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /Main Navbar -->
+
+    <!-- Main Section  -->
+    <section class="add-test-section">
+        <div class="form-container">
+            <h2>Savol qo'shish <span class="text-count">(15/5)</span>
+                <div class="error">
+                    <p>error</p>
+                </div></h2>
+            <form class="form-section-1" action="#" enctype="multipart/form-data">
+                <!-- Img Imput -->
+                <div class="file">
+                    <label class="label" for="file">Rasm:</label>
+                    <label class="custom-file-upload" for="test-image">Yuklash</label>
+                    <span class="warning">5MB dan oshmasin</span>
+                    <input type="file" id="test-image" name="test-image" accept="image/*">
+                    <div class="error">
+                        <p>error</p>
+                    </div>
+                </div>
+                <!-- /Download Img --> 
+
+                <!-- Question Input --> 
+                <div class="question">
+                    <label class="label" for="test-description">Savol:</label>
+                    <textarea class="width-textarea" id="test-description" name="test-description" rows="3" placeholder="Test haqida ma'lumot kiriting"></textarea>
+                    <div class="error">
+                        <p>error</p>
+                    </div>
+                </div>
+                <!-- /Question Input -->
+
+                <!-- Answer Input -->
+                <div class="answer">
+                    <div id="input-container" class="input-row">
+                        <div class="input-radio-pair">
+                            <label class="label" for="test-options">Javoblar:</label>
+                            <input class="width-input" type="text" name="test-options[]" placeholder="Javob 1 ni kiriting">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="option1" name="choice" value="1">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="error">
+                            <p>error</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Answer Input -->
+                <div class="button-row">
+                    <button class="add-input" type="button" id="add-input">Qo'shish</button>
+                    <button class="btn btn-padding" type="submit">Saqlash</button>
+                </div>
+            </form>            
+            <hr>
+            <h2>Asosiy malumot 
+                    <span class="tooltip">?</span>
+                    <span class="tooltip-text">Savollarni to'liq saqlaganingizdan keyin “qo'shimcha malumot” kiritishingiz mumkin!</span>
+                    <div class="error">
+                        <p>error</p>
+                    </div>
+            </h2>
+            <form class="form-section-2" action="">
+                <div class="test-container">
+                    <label class="label" for="">Savollar soni:</label>
+                    <input class="time" type="number"  oninput="this.value = this.value.replace(/[^1-9]/g, '')" placeholder="Majburiy" >
+                    <div class="error">
+                        <p>error</p>
+                    </div>
+                </div>
+                <!-- Title Input -->
+                <div class="title-container">
+                    <label class="label" for="">Sarlavha:</label>
+                    <input class="title" type="text" placeholder="Sarlavha ixtiyoriy">
+                    <div class="error">
+                        <p>error</p>
+                    </div>
+                </div>
+                <!-- /Title Input -->
+
+                <!-- Time Input -->
+                <div class="time-container">
+                    <label class="label" for="">Vaqt:</label>
+                    <input class="time" type="number" min="0" oninput="if(this.value < 0) this.value = '';" placeholder="Test vaqti">
+                    <div class="error">
+                        <p>error</p>
+                    </div>
+                </div>
+                <!-- /Time Input -->
+
+                <!-- Deadline Input -->
+                <div class="deadline-container">
+                    <label class="label" for="">Deadline:</label>
+                    <input class="deadline" type="date">
+                    <div class="error">
+                        <p>error</p>
+                    </div>
+                </div>
+                <!-- /Deadline Input -->
+                <div class="btn-1">
+                    <button class="btn" type="submit">Saqlash</button>
+                </div>
+            </form>
+        </div>
+        <div class="table-container">
+            <div class="width-container">
+            <div class="table-title-container">
+                <h2>Savollar ro'yxati</h2>
+            <form action="">
+                <select class="filter">
+                    <option>Kamayish</option>
+                    <option value="">O'sish</option>
+                 </select>
+            </form>
+            <form action="">
+                <select class="export" name="" id="">
+                    <option value="">Export</option>
+                    <option value="">JSON</option>
+                    <option value="">EXCEL</option>
+                 </select>
+            </form>
+            </div>             
+            <table>
+                <thead class="thead-container">
+                    <tr>
+                        <th>No:</th>
+                        <th>Sarlavha:</th>
+                        <th>Tog'ri javob:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-1">
+                        <td>1</td>
+                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td>A</td>
+                    </tr>
+                    <tr class="tr-2">
+                        <td>2</td>
+                        <td>Django Rest Framework nima ?</td>
+                        <td>D</td>
+                    </tr>
+                    <tr class="tr-1">
+                        <td>3</td>
+                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td>A</td>
+                    </tr>
+                    <tr class="tr-2">
+                        <td>4</td>
+                        <td>Django Rest Framework nima ?</td>
+                        <td>D</td>
+                    </tr>
+                    <tr class="tr-1">
+                        <td>5</td>
+                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td>A</td>
+                    </tr>
+                    <tr class="tr-2">
+                        <td>6</td>
+                        <td>Django Rest Framework nima ?</td>
+                        <td>D</td>
+                    </tr>
+                    <tr class="tr-1">
+                        <td>7</td>
+                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td>A</td>
+                    </tr>
+                    <tr class="tr-2">
+                        <td>8</td>
+                        <td>Django Rest Framework nima ?</td>
+                        <td>D</td>
+                    </tr>
+                    <tr class="tr-1">
+                        <td>9</td>
+                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td>A</td>
+                    </tr>
+                    <tr class="tr-2">
+                        <td>10</td>
+                        <td>Django Rest Framework nima ?</td>
+                        <td>D</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button class="btn-pagination" type="button">
+                    <span class="fas fa-chevron-left"><</span>
+                </button>
+                <a class="btn-pagination a-tag" href="#!">1</a>
+                <a class="btn-pagination a-tag" href="#!">2</a>
+                <a class="btn-pagination a-tag" href="#!">
+                    <span class="fas fa-ellipsis-h">...</span>
+                </a>
+                <a class="btn-pagination a-tag" href="#!">30</a>
+                <button class="btn-pagination" type="button">
+                    <span class="fas fa-chevron-right">></span>
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- /Main Section -->
+    <script src="assets/js/script.js"></script> 
+    <script src="assets/js/notification.js"></script>  
+</body>
+</html>
