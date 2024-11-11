@@ -104,7 +104,7 @@
         <div class="form-container">
             <h2>Savol qo'shish <span class="text-count">(15/5)</span>
                 <div class="error">
-                    <p>error</p>
+                    <p>error all</p>
                 </div></h2>
             <form class="form-section-1" action="#" enctype="multipart/form-data">
                 <!-- Img Imput -->
@@ -113,8 +113,8 @@
                     <label class="custom-file-upload" for="test-image">Yuklash</label>
                     <span class="warning">5MB dan oshmasin</span>
                     <input type="file" id="test-image" name="test-image" accept="image/*">
-                    <div class="error">
-                        <p>error</p>
+                    <div class="img-error">
+                        <p>error img</p>
                     </div>
                 </div>
                 <!-- /Download Img --> 
@@ -122,9 +122,9 @@
                 <!-- Question Input --> 
                 <div class="question">
                     <label class="label" for="test-description">Savol:</label>
-                    <textarea class="width-textarea" id="test-description" name="test-description" rows="3" placeholder="Test haqida ma'lumot kiriting"></textarea>
-                    <div class="error">
-                        <p>error</p>
+                    <textarea class="width-textarea focus" id="test-description" name="test-description" rows="3" placeholder="Test haqida ma'lumot kiriting"></textarea>
+                    <div class="question-error">
+                        <p>error question</p>
                     </div>
                 </div>
                 <!-- /Question Input -->
@@ -134,14 +134,14 @@
                     <div id="input-container" class="input-row">
                         <div class="input-radio-pair">
                             <label class="label" for="test-options">Javoblar:</label>
-                            <input class="width-input" type="text" name="test-options[]" placeholder="Javob 1 ni kiriting">
+                            <input class="width-input focus" type="text" name="test-options[]" placeholder="Javob 1 ni kiriting">
                             <label class="custom-checkbox">
-                                <input type="checkbox" id="option1" name="choice" value="1">
+                                <input class="single-select" type="checkbox" id="option0" name="answers-0-is_correct" value="0">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                        <div class="error">
-                            <p>error</p>
+                        <div class="answer-error">
+                            <p>error answer</p>
                         </div>
                     </div>
                 </div>
@@ -153,26 +153,27 @@
             </form>            
             <hr>
             <h2>Asosiy malumot 
-                    <span class="tooltip">?</span>
-                    <span class="tooltip-text">Savollarni to'liq saqlaganingizdan keyin “qo'shimcha malumot” kiritishingiz mumkin!</span>
-                    <div class="error">
-                        <p>error</p>
-                    </div>
+                <span class="tooltip">?
+                    <span class="tooltip-text">Asosiy malumotlarni to'liq saqlaganingizdan keyin “Savol qo'shish” bo'limiga o'tishingiz mumkin!</span>
+                </span>
+                <div class="error">
+                    <p>error all</p>
+                </div>
             </h2>
             <form class="form-section-2" action="">
                 <div class="test-container">
                     <label class="label" for="">Savollar soni:</label>
-                    <input class="time" type="number"  oninput="this.value = this.value.replace(/[^1-9]/g, '')" placeholder="Majburiy" >
-                    <div class="error">
-                        <p>error</p>
+                    <input class="time focus" type="number"  min="1" oninput="if(this.value < 0) this.value = '';" placeholder="Majburiy" >
+                    <div class="test-count-error">
+                        <p>error test count</p>
                     </div>
                 </div>
                 <!-- Title Input -->
                 <div class="title-container">
                     <label class="label" for="">Sarlavha:</label>
-                    <input class="title" type="text" placeholder="Sarlavha ixtiyoriy">
-                    <div class="error">
-                        <p>error</p>
+                    <input class="title focus" type="text" placeholder="Sarlavha ixtiyoriy">
+                    <div class="title-error">
+                        <p>error title</p>
                     </div>
                 </div>
                 <!-- /Title Input -->
@@ -180,9 +181,9 @@
                 <!-- Time Input -->
                 <div class="time-container">
                     <label class="label" for="">Vaqt:</label>
-                    <input class="time" type="number" min="0" oninput="if(this.value < 0) this.value = '';" placeholder="Test vaqti">
-                    <div class="error">
-                        <p>error</p>
+                    <input class="time focus" type="number" min="0" oninput="if(this.value < 0) this.value = '';" placeholder="Test vaqti">
+                    <div class="time-error">
+                        <p>error time</p>
                     </div>
                 </div>
                 <!-- /Time Input -->
@@ -190,9 +191,9 @@
                 <!-- Deadline Input -->
                 <div class="deadline-container">
                     <label class="label" for="">Deadline:</label>
-                    <input class="deadline" type="date">
-                    <div class="error">
-                        <p>error</p>
+                    <input class="deadline focus" type="date">
+                    <div class="deadline-error">
+                        <p>error deadline</p>
                     </div>
                 </div>
                 <!-- /Deadline Input -->
@@ -202,7 +203,7 @@
             </form>
         </div>
         <div class="table-container">
-            <div class="width-container">
+        <div class="width-container">
             <div class="table-title-container">
                 <h2>Savollar ro'yxati</h2>
             <form action="">
@@ -230,52 +231,52 @@
                 <tbody>
                     <tr class="tr-1">
                         <td>1</td>
-                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td class="td-title">Amir Temur qachon tavallud topgan ?</td>
                         <td>A</td>
                     </tr>
                     <tr class="tr-2">
                         <td>2</td>
-                        <td>Django Rest Framework nima ?</td>
+                        <td class="td-title">Django Rest Framework nima ?</td>
                         <td>D</td>
                     </tr>
                     <tr class="tr-1">
                         <td>3</td>
-                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td class="td-title">Amir Temur qachon tavallud topgan ?</td>
                         <td>A</td>
                     </tr>
                     <tr class="tr-2">
                         <td>4</td>
-                        <td>Django Rest Framework nima ?</td>
+                        <td class="td-title">Django Rest Framework nima ?</td>
                         <td>D</td>
                     </tr>
                     <tr class="tr-1">
                         <td>5</td>
-                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td class="td-title">Amir Temur qachon tavallud topgan ?</td>
                         <td>A</td>
                     </tr>
                     <tr class="tr-2">
                         <td>6</td>
-                        <td>Django Rest Framework nima ?</td>
+                        <td class="td-title">Django Rest Framework nima ?</td>
                         <td>D</td>
                     </tr>
                     <tr class="tr-1">
                         <td>7</td>
-                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td class="td-title">Amir Temur qachon tavallud topgan ?</td>
                         <td>A</td>
                     </tr>
                     <tr class="tr-2">
                         <td>8</td>
-                        <td>Django Rest Framework nima ?</td>
+                        <td class="td-title">Django Rest Framework nima ?</td>
                         <td>D</td>
                     </tr>
                     <tr class="tr-1">
                         <td>9</td>
-                        <td>Amir Temur qachon tavallud topgan ?</td>
+                        <td class="td-title">Amir Temur qachon tavallud topgan ?</td>
                         <td>A</td>
                     </tr>
                     <tr class="tr-2">
                         <td>10</td>
-                        <td>Django Rest Framework nima ?</td>
+                        <td class="td-title">Django Rest Framework nima ?</td>
                         <td>D</td>
                     </tr>
                 </tbody>

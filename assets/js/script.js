@@ -10,12 +10,15 @@ document.getElementById('add-input').addEventListener('click', function () {
         const nameIndex = inputCount;
 
         newInputDiv.innerHTML = `
-            <input class="width-input js-width-input" type="text" name="answers-${nameIndex}-answer" placeholder="Variant ${inputCount + 1} ni kiriting">
+            <input class="width-input js-width-input padding-input" type="text" name="answers-${nameIndex}-answer" placeholder="Variant ${inputCount + 1} ni kiriting">
             <label class="custom-checkbox">
             <input class="single-select" type="checkbox" id="option${nameIndex}" name="answers-${nameIndex}-is_correct" value="${nameIndex}">
             <span class="checkmark"></span>
             </label>
             <button type="button" class="delete-btn"><img src="assets/icon/delete.svg"></button>
+            <div class="answer-error">
+                <p>error answer</p>
+            </div>
         `;
 
         inputContainer.appendChild(newInputDiv);
@@ -28,7 +31,6 @@ document.getElementById('add-input').addEventListener('click', function () {
             updateInputNames();
         });
 
-        // Add event listener to the new checkbox
         const checkbox = newInputDiv.querySelector('.single-select');
         checkbox.addEventListener('change', function() {
             if (this.checked) {
@@ -53,11 +55,10 @@ function updateInputNames() {
 
         textInput.name = `answers-${index}-answer`;
 
-        checkboxInput.name = `answers-${index}-is_correct`;  // Kept same for consistency
+        checkboxInput.name = `answers-${index}-is_correct`;
         checkboxInput.id = `option${index}`;
         checkboxInput.value = index;
 
-        // Update the checkbox event listener
         checkboxInput.addEventListener('change', function() {
             if (this.checked) {
                 const checkboxes = document.querySelectorAll('.single-select');

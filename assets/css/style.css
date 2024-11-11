@@ -93,6 +93,10 @@ input[type="file"] {
     margin-left: 85px;
 }
 
+.padding-input {
+    margin-top: 20px;
+}
+
 .width-textarea::placeholder {
     font-size: 14px;
 }
@@ -204,21 +208,25 @@ hr {
     text-align: center;
     margin-left: 2px;
     z-index: 999;
+    vertical-align: middle;
 }
 
 .tooltip-text {
     visibility: hidden;
-    width: 200px;
-    background-color: #f9f9f9;
+    width: 120px;
+    height: 130px;
+    background-color: white;
     color: #000;
     text-align: center;
-    padding: 10px;
-    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 7px;
+    border-radius: 10px;
     position: absolute;
-    z-index: 1;
+    z-index: 999;
     bottom: 150%;
     left: 50%;
-    margin-left: -100px;
+    margin-left: -70px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -291,19 +299,49 @@ hr {
 }
 
 .title-container, .time-container, .deadline-container {
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
 .btn-1 {
-    padding-top: 15px;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.error {
+.error, .img-error,
+.question-error, .answer-error,
+.test-count-error, .title-error,
+.time-error, .deadline-error {
     color: red;
     font-size: 14px;
     position: absolute;
     font-weight: 400;
+}
+
+.img-error, .question-error {
+    margin-left: 57px;
+}
+
+.answer-error {
+    margin-left: 85px;
+}
+
+.test-count-error {
+    margin-left: 121px;
+}
+
+.title-error, .deadline-error {
+    margin-left: 87px;
+}
+
+.time-error {
+    margin-left: 50px;
+}
+
+.focus:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    border: black solid 1px;
 }
 
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -325,8 +363,6 @@ hr {
 
 .table {
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
 }
 
 .table-title-container {
@@ -338,6 +374,7 @@ hr {
     border-radius: 10px 10px 0px 0px;
     align-items: center;
     padding: 0px 20px;
+    border-bottom: solid 1px #848484;
 }
 
 .filter, .export {
@@ -346,9 +383,12 @@ hr {
     border-radius: 10px;
 }
 
+.filter, .export:focus {
+    outline: none;
+}
+
 .th-container {
     display: flex;
-    flex-direction: ;
     padding-top: 11px;
     padding-bottom: 11px;
     background-color:#966BEF;
@@ -361,23 +401,27 @@ hr {
     color: white;
     padding: 7px 10px;
     border: none;
+    border-bottom: solid 1px #848484;
 }
 
 .tr-1 td, .tr-2 td {
     color: black;
     padding: 11px 10px;
-
+    text-align: center;
 }
 
 .tr-1 td {
     background-color: #E0E4EA;
     border-bottom: solid 1px #848484;
-
 }
 
 .tr-2 td {
     background-color: white;
     border-bottom: solid 1px #848484;
+}
+
+.td-title {
+    text-align: start !important;
 }
 
 .pagination {
@@ -403,6 +447,10 @@ hr {
     border: none;
     cursor: pointer;
     border-radius: 10px;
+}
+
+table {
+    border-collapse: collapse;
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -753,3 +801,4 @@ hr {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
