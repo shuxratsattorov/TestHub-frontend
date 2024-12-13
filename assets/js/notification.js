@@ -11,7 +11,7 @@ function toggleNotificationPage(event) {
 
 // Sahifa bo'sh joyiga bosilganda yopish
 document.addEventListener("click", function(event) {
-    var notification = document.querySelector(".notification");
+    var notification = document.querySelector(".header-menu__notification");
     var notificationPage = document.getElementById("notificationPage");
 
     // Faqat .notification yoki notificationPage ichida bo'lmagan joylarga bosilsa
